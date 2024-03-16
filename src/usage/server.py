@@ -19,7 +19,6 @@ print(f"UDP server up and listening at {server_address}")
 
 try:
     while True:
-        # Listen for incoming datagrams
         bytes_address_pair = server_socket.recvfrom(buffer_size)
         message_bytes = bytes_address_pair[0]
         address = bytes_address_pair[1]
@@ -31,7 +30,6 @@ try:
         print(
             f"Packet data: Version: {packet.version}, Session ID: {packet.session_id}, Group Size: {packet.group_size}")
 
-        # Here, you can process the packet further or send a response
 
 except KeyboardInterrupt:
     print("Server is shutting down.")

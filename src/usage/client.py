@@ -21,6 +21,5 @@ packet_bytes = packet.encode()
 client_socket.sendto(packet_bytes, server_address)
 print(f"Sent packet to server at {server_address}")
 
-# Optionally, receive a response from the server and process it
 
 client_socket.close()
