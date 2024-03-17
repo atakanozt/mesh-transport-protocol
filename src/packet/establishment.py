@@ -78,6 +78,16 @@ class SessionEstablishmentPacket:
 
         return cls(version, session_id, group_size, nodes_info, timestamp)
 
+    def __str__(self) -> str:
+        node_str = ', '.join([f'({ip}, {port})' for ip, port in self.nodes_info])
+        return (f'SessionEstablishmentPacket(\n'
+                f'  Version: {self.version},\n'
+                f'  Session ID: {self.session_id},\n'
+                f'  Group Size: {self.group_size},\n'
+                f'  Nodes Info: [{node_str}],\n'
+                f'  Timestamp: {self.timestamp}\n'
+                f')')
+
 
 if __name__ == '__main__':
     # Example usage
